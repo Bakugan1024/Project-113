@@ -8,12 +8,8 @@ function setup()
 canvas=createCanvas(640, 480);
 canvas.position(150, 150);
 video=createCapture(VIDEO);
+video.size(300, 300);
 video.hide();
-
-
-
-
-
 }
 
 function draw()
@@ -33,20 +29,22 @@ rect(40, 90, 20, 300);
 rect(580, 90, 20, 300);
 }
 
+function modelLoaded(){
+    console.log("PoseNet Is Initialized");
+}
+
+function gotPoses(results)
+{
+    if(results.length>0)
+    {
+        console.log(results);
+        console.log("nose x="+results[0].pose.nose.x);
+        console.log("nose y="+results[0].pose.nose.y);
+    }
+}
+
+
 function take_snapshot()
 {
     save('student_name.png');
 }
-
-function filter_tint()
-{
-    tint_color=document.getElementById("color_name").value;
-}
-
-rect(30, 20, 55, 55, 20, 15, 10, 5);
-describe('white rect with red thick outline and round edges of different radii');
-
-
-
-circle(130, 130, 120);
-describe('white circle with black outline');
