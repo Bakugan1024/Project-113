@@ -1,74 +1,35 @@
 <html>
 
-    <head>
-      <title>Emotion To Hand Gesture</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-   
-      <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-   
-      <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-   
-    <body>
-      <div class="container">
-   
-        <center>
-         
-         <h3 class="btn btn-warning heading">Emotion to Hand Gesture App
-           <br>
-           <span>&#128076;</span>
-           <span>&#128077;</span>
-           <span>&#9996;</span>
-           <span>&#9994;</span>
-           <span>&#128075;</span>
-           <span>&#129304;</span>
-         </h3>
-          
-         <br><br>
-   
-          <p style="font-size: 22px;">Take your selfie to generate emoji
-            <br>
-            <b>Which Hand Gesture are you doing?</b>
-            <br>
-          </p>
-   
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <label>Webcam View - </label>
-            <div id="camera"></div>
-            <button onclick="take_snapshot()" class="btn btn-warning">Webcam View</button>
-            <br>
-            <br>
-          </div>
-   
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <h5>Prediction 1</h5>
-            <p id="result_emotion_name" class="emotion_name"></p>
-            <p id="update_emoji" class="emoji"></p>
-   
-            <h5>Prediction 2</h5>
-            <p id="result_emotion_name2" class="emotion_name"></p>
-            <p id="update_emoji2" class="emoji"></p>
-   
-          </div>
-   
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <label>Snapshot - </label>
-            <div id="result"></div>
-            <button onclick="check()" class="btn btn-success">Predict Hand Gesture</button>
-            <br>
-            <br>
-          </div>
-   
-        </center>
-   
-      </div>
-   
-      <script src="main.js"></script>
-   
-    </body>
-   
-    </html>
+<head>
+  <meta charset="UTF-8">
+  <title>Intro p5.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+
+  <style type="text/css">
+  h3
+  {
+    font-size: 25px !important;
+  }
+  canvas {
+  	border: 1px black;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h3 class="btn btn-primary">Introduction to p5.js</h3>
+    <hr>
+    <button onclick="take_snapshot()" class="btn btn-success">Take Snapshot</button>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+
+</html>

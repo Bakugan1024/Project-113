@@ -1,39 +1,52 @@
-Webcam.set({
-    width: 350,
-    height: 300,
-    image_format: 'png',
-    png_quality: 90
-});
+function preload()
+{
 
-camera = document.getElementById("camera");
-
-
-Webcam.attach('#camera');
-
-function take_snapshot() {
-    Webcam.snap(function (data_uri) {
-        document.getElementById("result").innerHTML = '<img id="captured_image" src="' + data_uri + '"/>';
-    });
 }
 
-console.log('ml5 version', ml5.version);
+function setup()
+{
+canvas=createCanvas(640, 480);
+canvas.position(150, 150);
+video=createCapture(VIDEO);
+video.hide();
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/hobnmmtb3/model.json', modelLoaded)
 
-function modelLoaded() {
-    console.log('Model Loaded');
+
+
+
 }
 
-function check() {
-    img = document.getElementById('captued_image');
-    classifier.classify(img, gotResult);
+function draw()
+{
+image(video, 230, 150, 220, 200);
+fill(255, 0, 0);
+stroke(255, 0, 0);
+circle(50, 50, 80);
+circle(50, 430, 80);
+circle(590, 50, 80);
+circle(590, 430, 80);
+fill(0, 128, 0);
+stroke(0, 128, 0);
+rect(90, 40, 460, 20);
+rect(90, 420, 460, 20);
+rect(40, 90, 20, 300);
+rect(580, 90, 20, 300);
 }
 
-function speak() {
-    var synth = window.speechSynthesis;
-    speak_data_1 = "The first prediction is " + prediction_1;
-    speak_data_2 = "And the second prediction is " + prediction_2;
-    var utterThis = new SpeechSynthesisUtterance(speak_data_1 + speak_data_2);
-    utterThis.rate = 0.5;
-    synth.speak(utterThis);
+function take_snapshot()
+{
+    save('student_name.png');
 }
+
+function filter_tint()
+{
+    tint_color=document.getElementById("color_name").value;
+}
+
+rect(30, 20, 55, 55, 20, 15, 10, 5);
+describe('white rect with red thick outline and round edges of different radii');
+
+
+
+circle(130, 130, 120);
+describe('white circle with black outline');
